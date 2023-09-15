@@ -1,0 +1,20 @@
+# Triggers the workflow to run on push to `main` branch
+on:
+  push:
+    branches: [main]
+
+  # Allow to run workflow manually from the Actions tab
+  workflow_dispatch:
+
+# The actual workflow to run sequentially
+jobs:
+  # The job in this workflow called `build`
+  build:
+    # Set the runner environment
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out repository
+      - uses: actions/checkout@v3
+
+      - name: Starting the workflow
+        run: echo Hi lol!
